@@ -1,113 +1,68 @@
-import {
-  Globe,
-  Video,
-  Cloud,
-  ShoppingCart,
-  FolderKanban,
-  BookOpen,
-  Sparkles,
-  TrendingUp,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Code, Smartphone, Palette, TrendingUp } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+const services = [
+  {
+    icon: Code,
+    title: "Web Development",
+    description: "Custom websites and web applications built with modern technologies for optimal performance and user experience.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile Solutions",
+    description: "Responsive mobile-first designs and applications that work seamlessly across all devices.",
+  },
+  {
+    icon: Palette,
+    title: "UI/UX Design",
+    description: "Beautiful, intuitive interfaces designed to engage users and enhance brand identity.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Digital Strategy",
+    description: "Comprehensive digital strategies to grow your online presence and achieve business objectives.",
+  },
+];
 
 const Services = () => {
-  const services = [
-    {
-      icon: Globe,
-      title: "Web Design",
-      description: "Create stunning, responsive websites that convert visitors into customers.",
-      gradient: "from-primary to-primary-dark",
-    },
-    {
-      icon: Video,
-      title: "Loom Mastery",
-      description: "Master video messaging and screen recording for effective communication.",
-      gradient: "from-secondary to-secondary-dark",
-    },
-    {
-      icon: Cloud,
-      title: "Dropbox & Cloud Storage",
-      description: "Optimize your digital workspace with cloud storage solutions.",
-      gradient: "from-primary to-primary-dark",
-    },
-    {
-      icon: ShoppingCart,
-      title: "Drop Shipping",
-      description: "Launch and scale your e-commerce business with proven strategies.",
-      gradient: "from-secondary to-secondary-dark",
-    },
-    {
-      icon: FolderKanban,
-      title: "Project Management",
-      description: "Learn industry-standard tools to manage projects efficiently.",
-      gradient: "from-primary to-primary-dark",
-    },
-    {
-      icon: BookOpen,
-      title: "eBook Creation",
-      description: "Turn your knowledge into profitable digital products.",
-      gradient: "from-secondary to-secondary-dark",
-    },
-    {
-      icon: Sparkles,
-      title: "AI Tools Training",
-      description: "Leverage cutting-edge AI tools to boost productivity and creativity.",
-      gradient: "from-primary to-primary-dark",
-    },
-    {
-      icon: TrendingUp,
-      title: "Crypto Training & Signals",
-      description: "Navigate cryptocurrency markets with expert guidance and trading signals.",
-      gradient: "from-secondary to-secondary-dark",
-    },
-  ];
-
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section id="services" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Our <span className="text-primary">Services</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive training programs designed to equip you with in-demand digital skills for the
-              modern workplace.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {services.map((service, index) => (
-              <div
+    <section className="py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 animate-slide-up">
+          <h2 className="text-4xl font-bold mb-4">
+            Our{" "}
+            <span className="bg-gradient-accent bg-clip-text text-transparent">
+              Services
+            </span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive digital solutions designed to elevate your business
+          </p>
+        </div>
+        
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <Card
                 key={index}
-                className="group bg-card rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-slide-up"
+                className="bg-card border-border hover:border-primary/50 transition-all duration-300 group animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
-                >
-                  <service.icon className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground">{service.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button variant="cta" size="xl" onClick={scrollToContact}>
-              Get Started Today
-            </Button>
-          </div>
+                <CardHeader>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
