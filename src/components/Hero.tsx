@@ -29,7 +29,7 @@ const Hero = () => {
               Digital Tech
             </span>
             <br />
-            with Kunle
+            with Oyeniyi Ifakunle
           </h1>
           
           <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">

@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -40,10 +40,10 @@ const Contact = () => {
               </div>
               <h3 className="font-semibold mb-2">Email</h3>
               <a
-                href="mailto:contact@digitaltechkunle.com"
-                className="text-muted-foreground hover:text-secondary transition-colors"
+                href="mailto:oyeniyiifakunle@gmail.com"
+                className="text-muted-foreground hover:text-secondary transition-colors text-sm"
               >
-                Get in Touch
+                oyeniyiifakunle@gmail.com
               </a>
             </Card>
             
@@ -52,21 +52,78 @@ const Contact = () => {
                 <MapPin className="h-6 w-6 text-accent" />
               </div>
               <h3 className="font-semibold mb-2">Location</h3>
-              <p className="text-muted-foreground">
-                Nigeria
-              </p>
+              <a
+                href="https://www.google.com/maps/place/Oyeniyi+Ifakunle/@9.0338725,8.6707713,5z/data=!4m6!3m5!1s0x496d5ff6ec8d4b61:0xe8438dfbd870077d!8m2!3d9.0338725!4d8.6707713!16s%2Fg%2F11yjkj6sc8?force=pwa&source=mlapk&g_ep=Eg1tbF8yMDI1MDkyNF8wIOC7DCoASAJQAQ%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-accent transition-colors"
+              >
+                Port Harcourt, Nigeria
+              </a>
             </Card>
           </div>
           
-          <div className="text-center animate-slide-up" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-wrap justify-center gap-4 mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
             <Button
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary"
+              onClick={() => window.open("https://wa.me/2348089376351?text=Hello%20Oyeniyi%2C%20Nice%20connected%20with%20you%20your%20.", "_blank")}
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              WhatsApp
+            </Button>
+            
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
               onClick={() => window.location.href = "tel:08089376351"}
             >
               <Phone className="mr-2 h-5 w-5" />
               Call Now
             </Button>
+          </div>
+
+          <div className="flex justify-center gap-6 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+            <a
+              href="https://www.facebook.com/profile.php?id=100080038794643&mibextid=rS40aB7S9Ucbxw6v"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-5 w-5" />
+            </a>
+            
+            <a
+              href="https://www.instagram.com/p/DQAMWieDTAj/?utm_source=ig_web_copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-all"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+            
+            <a
+              href="https://ng.linkedin.com/in/oyeniyi-ifakunle-61637b30b"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+            
+            <a
+              href="https://t.me/+0Q0PMHoeRIwyMTJk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all"
+              aria-label="Telegram"
+            >
+              <Send className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </div>
