@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/cs-logo-new.jpg";
+import logo from "@/assets/logo-main.jpg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Oyeniyi Ifakunle Logo" className="h-12 w-12 object-contain" />
+            <img src={logo} alt="Oyeniyi Ifakunle - Your Global Creative Partner" className="h-12 w-auto object-contain" />
             <span className="font-bold text-lg bg-gradient-accent bg-clip-text text-transparent">
               Digital Tech
             </span>
