@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CreditCard } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import logo from "@/assets/cs-logo-new.jpg";
+import logo from "@/assets/logo-main.jpg";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto animate-slide-up">
           <div className="flex justify-center mb-8">
-            <img src={logo} alt="Oyeniyi Ifakunle - Your Global Creative Partner" className="h-32 w-auto object-contain" />
+            <img src={logo} alt="Oyeniyi Ifakunle - Your Global Creative Partner" className="h-40 w-auto object-contain" />
           </div>
           
           <div className="inline-block mb-4">
