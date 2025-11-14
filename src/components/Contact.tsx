@@ -1,8 +1,51 @@
+import { useState } from "react";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("https://formspree.io/f/meovowjn", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "We'll get back to you soon.",
+        });
+        e.currentTarget.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Failed to Send",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,7 +127,69 @@ const Contact = () => {
             </Button>
           </div>
 
-          <div className="flex justify-center gap-6 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+          <Card className="bg-background border-border p-8 mb-8 animate-slide-up" style={{ animationDelay: "0.5s" }}>
+            <h3 className="text-2xl font-bold mb-6 text-center">Send Us a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="contact-name">Name</Label>
+                  <Input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder="Your name"
+                    className="mt-2"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="contact-email">Email</Label>
+                  <Input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="your.email@example.com"
+                    className="mt-2"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <Label htmlFor="contact-subject">Subject</Label>
+                <Input
+                  id="contact-subject"
+                  name="subject"
+                  type="text"
+                  required
+                  placeholder="How can we help?"
+                  className="mt-2"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="contact-message">Message</Label>
+                <Textarea
+                  id="contact-message"
+                  name="message"
+                  required
+                  placeholder="Tell us more about your inquiry..."
+                  className="mt-2 min-h-[120px]"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          </Card>
+
+          <div className="flex justify-center gap-6 animate-slide-up" style={{ animationDelay: "0.6s" }}>
             <a
               href="https://www.facebook.com/profile.php?id=100080038794643&mibextid=rS40aB7S9Ucbxw6v"
               target="_blank"
