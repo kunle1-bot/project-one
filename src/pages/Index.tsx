@@ -5,7 +5,7 @@ import Training from "@/components/Training";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -17,7 +17,7 @@ const Index = () => {
       <Services />
       <Contact />
       <Footer />
-      <Chatbot />
+      <WhatsAppButton />
     </div>
   );
 };
