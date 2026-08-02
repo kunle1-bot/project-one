@@ -106,6 +106,7 @@ const documents = [
       "A remote-work CV tailored for virtual assistant and online support opportunities.",
     url: vaCv.url,
   },
+];
 
 const Projects = () => {
   return (
