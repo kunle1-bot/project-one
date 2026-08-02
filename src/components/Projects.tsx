@@ -5,7 +5,7 @@ import showcaseVideo from "@/assets/showcase.mp4.asset.json";
 import grantBlueprint from "@/assets/grant-blueprint.pdf.asset.json";
 import spreadsheet from "@/assets/diamond-crest-spreadsheet.xlsx.asset.json";
 import cvSample from "@/assets/professional-cv-sample.pdf.asset.json";
-import schoolScamArticle from "@/assets/WHY_STUDENT_SAYS_SCHOOL_NA_SCAM.pdf.asset.json";
+
 import adminCv from "@/assets/ADMIN_MANAGEMENT_THERESA_CHIZOBA_ECHESURUM_CV.pdf.asset.json";
 import teacherCv from "@/assets/CLASS_TEACHER_THERESE_CHIZOBA_ECHESURUM_CV.pdf.asset.json";
 import salesCv from "@/assets/AKANDE_ELIJAH_sales_rep_CV.pdf.asset.json";
@@ -106,15 +106,6 @@ const documents = [
       "A remote-work CV tailored for virtual assistant and online support opportunities.",
     url: vaCv.url,
   },
-  {
-    icon: FileText,
-    title: "Why Students Say School Na Scam",
-    client: "Thought Leadership Article",
-    description:
-      "A written piece challenging outdated learning models and pushing practical, tech-driven skills.",
-    url: schoolScamArticle.url,
-  },
-];
 
 const Projects = () => {
   return (
@@ -197,11 +188,11 @@ const Projects = () => {
                 className="w-full h-auto bg-muted"
               />
             </div>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-sm text-muted-foreground mt-4 mb-4">
               A short walkthrough of recent client work and delivered digital solutions.
             </p>
 
-            <div className="mt-8 p-6 bg-card border border-border rounded-2xl">
+            <div className="mt-6 p-6 bg-card border border-border rounded-2xl">
               <h4 className="text-lg font-semibold mb-2">
                 My Vision for the Next Generation
               </h4>
@@ -209,16 +200,38 @@ const Projects = () => {
                 I want to see the coming generation doing exploits with technology —
                 building, creating and solving real problems with digital skills.
               </p>
-              <Button asChild variant="outline">
-                <a
-                  href="https://web.facebook.com/share/v/1EUuGdYCUy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <PlayCircle className="mr-2 h-4 w-4" />
-                  Watch the Vision Video
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button asChild variant="outline">
+                  <a
+                    href="https://web.facebook.com/share/v/1EUuGdYCUy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PlayCircle className="mr-2 h-4 w-4" />
+                    Watch the Vision Video
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a
+                    href="https://web.facebook.com/share/v/1GRgqLRmLr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PlayCircle className="mr-2 h-4 w-4" />
+                    Watch: Generation Exploits 1
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a
+                    href="https://web.facebook.com/share/v/1JTMrWEYZR/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PlayCircle className="mr-2 h-4 w-4" />
+                    Watch: Generation Exploits 2
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
