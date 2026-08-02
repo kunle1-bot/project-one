@@ -1,10 +1,15 @@
-import { ExternalLink, FileText, FileSpreadsheet, FileUser } from "lucide-react";
+import { ExternalLink, FileText, FileSpreadsheet, FileUser, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import showcaseVideo from "@/assets/showcase.mp4.asset.json";
 import grantBlueprint from "@/assets/grant-blueprint.pdf.asset.json";
 import spreadsheet from "@/assets/diamond-crest-spreadsheet.xlsx.asset.json";
 import cvSample from "@/assets/professional-cv-sample.pdf.asset.json";
+import schoolScamArticle from "@/assets/WHY_STUDENT_SAYS_SCHOOL_NA_SCAM.pdf.asset.json";
+import adminCv from "@/assets/ADMIN_MANAGEMENT_THERESA_CHIZOBA_ECHESURUM_CV.pdf.asset.json";
+import teacherCv from "@/assets/CLASS_TEACHER_THERESE_CHIZOBA_ECHESURUM_CV.pdf.asset.json";
+import salesCv from "@/assets/AKANDE_ELIJAH_sales_rep_CV.pdf.asset.json";
+import vaCv from "@/assets/AKANDE_ELIJAH_vietual_ass_CV.pdf.asset.json";
 
 const websites = [
   {
@@ -68,6 +73,46 @@ const documents = [
     description:
       "A recruiter-ready CV rebuilt for clarity, strong positioning and interview conversion.",
     url: cvSample.url,
+  },
+  {
+    icon: FileUser,
+    title: "Admin & Management CV",
+    client: "Theresa Chizoba Echesurum",
+    description:
+      "An administration and management CV positioned for leadership and operations roles.",
+    url: adminCv.url,
+  },
+  {
+    icon: FileUser,
+    title: "Class Teacher CV",
+    client: "Therese Chizoba Echesurum",
+    description:
+      "A teaching-focused CV highlighting classroom experience, curriculum delivery and results.",
+    url: teacherCv.url,
+  },
+  {
+    icon: FileUser,
+    title: "Sales Representative CV",
+    client: "Akande Elijah",
+    description:
+      "A sales CV built around targets, client relationships and revenue achievements.",
+    url: salesCv.url,
+  },
+  {
+    icon: FileUser,
+    title: "Virtual Assistant CV",
+    client: "Akande Elijah",
+    description:
+      "A remote-work CV tailored for virtual assistant and online support opportunities.",
+    url: vaCv.url,
+  },
+  {
+    icon: FileText,
+    title: "Why Students Say School Na Scam",
+    client: "Thought Leadership Article",
+    description:
+      "A written piece challenging outdated learning models and pushing practical, tech-driven skills.",
+    url: schoolScamArticle.url,
   },
 ];
 
@@ -155,6 +200,26 @@ const Projects = () => {
             <p className="text-sm text-muted-foreground mt-4">
               A short walkthrough of recent client work and delivered digital solutions.
             </p>
+
+            <div className="mt-8 p-6 bg-card border border-border rounded-2xl">
+              <h4 className="text-lg font-semibold mb-2">
+                My Vision for the Next Generation
+              </h4>
+              <p className="text-sm text-muted-foreground mb-4">
+                I want to see the coming generation doing exploits with technology —
+                building, creating and solving real problems with digital skills.
+              </p>
+              <Button asChild variant="outline">
+                <a
+                  href="https://web.facebook.com/share/v/1EUuGdYCUy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <PlayCircle className="mr-2 h-4 w-4" />
+                  Watch the Vision Video
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
